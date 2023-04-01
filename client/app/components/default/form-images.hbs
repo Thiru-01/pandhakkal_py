@@ -1,0 +1,21 @@
+{{#if this.isEmpty}}
+<div class="field_container {{@class}}">
+    <div class="field_holder">
+      <label for="myImages">Select images</label>
+      <input name={{@name}} type="file" id="myImages" accept="image/*" {{on "change" this.fileChange}} multiple>
+    </div>
+</div>
+{{else}}
+    <div class="selected_file_list">
+      {{#each this.imageList as |value i|}}
+        <div class="selected_image">
+          <div class="selected_file_title">{{value.name}}</div>
+          <div class="selected_file_close">
+            <div onclick={{fn this.removeItem i}}>
+              <FaIcon @icon="xmark" class="selected_file_close_icon"  @symbole={{true}}/>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+{{/if}}

@@ -1,0 +1,18 @@
+<div class="nav-top_spacing">
+  <div class="form-title">Upload - Events</div>
+  <form id="event_form" method="post" enctype="multipart/form-data" onsubmit={{this.handleValidation}}>
+    <div class="form-admin">
+      <Default::FormTextField @icon="champagne-glasses" @placeholder="Enter the event name" @id="event_name" @name="event_name"/>
+      <Default::FormTextField @icon="map-marker-alt" @placeholder="Enter the place" @id="event_name" @name="place"/>
+      <Default::FormTextField @placeholder="Select a date" @id="event_date" @type="date" @name="date"/>
+      <Default::FormTextField @icon="money-bill-alt" @placeholder="Enter price for this event" @id="price" @type="number" @name="price"/>
+      <Default::FormDropdown @placeholder="Please select category" @id="cate" @type="category" @content={{this.categories}} @name="category"/>
+      <Default::FormDropdown @placeholder="Please select type" @id="type" @type="type" @content={{this.type}} @name="type"/>
+    </div>
+      <Default::FormImages @sendValue={{fn this.receiveFiles}} @name="file"/>
+      <Default::FormTextArea @placeholder="Enter description" @class="field_desc" @name="desc"/>
+    <div class="form-button">
+      <button type="submit" class="form-submit-button">Upload</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<LinkTo @route={{@route}} class="home-card-inner">
+  <div class="home-card-title">{{@title}}</div>
+  {{#if (equal @isLong "true")}}
+    <div class="home-card-long">
+      <div class="home-card-desc home-card-long-desc">{{@desc}}</div>
+      <div class="home-card-long-container-image">
+        <img src={{@image}} alt={{@title}} class="home-card-long-image">
+      </div>
+    </div>
+  {{else}}
+    <img src={{@image}} alt={{@title}} class="home-card-image">
+    <div class="home-card-desc">{{@desc}}</div>
+  {{/if}}
+</LinkTo>

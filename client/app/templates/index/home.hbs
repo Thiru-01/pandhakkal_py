@@ -1,0 +1,38 @@
+<div class="home-wrapper">
+  <div class="home-image-slider nav-top_spacing">
+    <div class="left-slider-button">
+      <div onclick={{this.previousSlider}}>
+        <FaIcon @icon="circle-arrow-left" class="left-slider-button-icon" @symbole={{true}}/>
+      </div>
+    </div>
+    <div class="right-slider-button">
+      <div onclick={{this.nextSlider}}>
+        <FaIcon @icon="circle-arrow-right" class="right-slider-button-icon" @symbole={{true}}/>
+      </div>
+    </div>
+    <div class="image-slider-button-container">
+      <button type="button" class="image-slider-round-button" onclick={{fn this.specificSlider 0}}></button>
+      <button type="button" class="image-slider-round-button" onclick={{fn this.specificSlider 1}}></button>
+      <button type="button" class="image-slider-round-button" onclick={{fn this.specificSlider 2}}></button>
+      <button type="button" class="image-slider-round-button" onclick={{fn this.specificSlider 3}}></button>
+    </div>
+    {{#each this.imageLink as |value i|}}
+      <img id="image-slider" alt="slider" src={{value}} class="image-slider {{if (equal i 0) "image-slider-active"}}">
+    {{/each}}
+  </div>
+  <div class="home-type-placeholder-title">Events</div>
+  <div class="home-type-placeholder">
+    <div class="home-card grid-small-box-1">
+      <Home::Cards @route="index.events.inaugurations" @isLong="false" @title="Inauguration" @image="/assets/image/svg/home-inaguration.svg" @desc= "Inaugurations remind us that the power of democracy lies not in the individual, but in the collective will of the people."/>
+    </div>
+    <div class="home-card grid-small-box-2">
+      <Home::Cards @route="index.events.birthday_parties" @isLong="false" @title="Birthday Parties" @image="/assets/image/svg/home-birthday.svg" @desc= "Birthdays are a new start, a fresh beginning, and a time to pursue new endeavors with new goals."/>
+    </div>
+    <div class="home-vertical-card grid-vertical-box">
+      <Home::Cards @route="index.events.wedding" @isLong="false"  @title="Wedding"@image="/assets/image/svg/home-wedding.svg" @desc= "A successful marriage requires falling in love many times, always with the same person."/>
+    </div>
+    <div class="home-horizontal-card grid-horizontal-box">
+      <Home::Cards @route="index.events.baby_shower" @isLong="true" @title="Baby Shower" @image="/assets/image/svg/home-child.svg" @desc= "A baby is a blessing, a gift from heaven above, a precious little angel to cherish and to love. The arrival of a new baby brings a sense of joy and wonder to the world, as we witness the miracle of life unfolding before our eyes. From the moment they take their first breath, babies fill our hearts with love and bring light to our lives. Their innocent eyes and gentle touch remind us of the beauty and purity of the world, and their laughter and smiles fill us with hope and happiness. As we watch them grow and discover the world around them, we are filled with a sense of awe and wonder, and we feel privileged to be a part of their journey."/>
+    </div>
+  </div>
+</div>

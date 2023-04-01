@@ -1,0 +1,8 @@
+<div class="field_container {{@class}}">
+  <div class="field_holder">
+    <input name={{@name}} id={{@id}} placeholder={{@placeholder}} type={{@type}} value={{@value}} required>
+    {{#if (unequal @type "date")}}
+      <FaIcon @icon={{@icon}} class="form-icon" @symbole={{true}}/>
+    {{/if}}
+  </div>
+</div>
